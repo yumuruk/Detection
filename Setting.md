@@ -31,3 +31,7 @@ cd mmdetection # 폴더 이동
 python setup.py develop # 소스코드 연결
 
 ```
+
+WS01이랑 WS09에 해당하는 환경세팅 yaml파일 형태로 저장
+
+세팅한 이후 cehck_env.py 실행해서 제대로 설치됐는지 확인하면 됨

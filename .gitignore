@@ -1,0 +1,25 @@
+# 데이터셋 제외
+data/
+dataset/
+mmdetection/
+
+# 학습 로그 및 결과물 제외
+work_dirs/
+outputs/
+*.log
+
+# 가중치 파일 제외
+*.pth
+*.pkl
+*.pt
+
+# 파이썬 캐시 및 가상환경 제외
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.vscode/
+.idea/
+venv/
+env/
+anaconda/
+EOT

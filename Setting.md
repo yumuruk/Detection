@@ -12,6 +12,16 @@ conda activate mmdet
 
 Intel MKL FATAL ERROR 및 Segmentation fault방지 위해서 pip 대신 conda 사용
 
+> Intel MKL FATAL ERROR (Library Conflict)
+원인: pip로 설치한 PyTorch에 내장된 연산 라이브러리(libiomp5.so)가 시스템 또는 Conda 환경의 MKL 라이브러리와 중복 로드되어 충돌 발생.
+
+해결: PyTorch를 conda install 명령어로 설치합니다. Conda는 시스템 라이브러리와의 의존성을 통합 관리하므로 버전 충돌을 원천적으로 방지합니다.
+
+> Segmentation fault (Binary Incompatibility)
+원인: pip로 배포되는 사전 빌드된(pre-built) PyTorch 바이너리가 현재 서버의 시스템 라이브러리(GCC/GLIBC 등)와 호환되지 않아 발생하는 메모리 참조 오류.
+
+해결: 시스템 환경에 의존하지 않고 독립적인 런타임 환경을 제공하는 Conda 패키지를 사용하여 설치하면 안정적으로 실행됩니다.
+
 ```
 conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=11.8 -c pytorch -c nvidia -y
 
